@@ -1,0 +1,68 @@
+% Binghamton dissertation or thesis template for Latex
+% Read below and fill in each section as appropriate for your department
+% The comments should make it self-explanatory.
+% Enjoy =)
+\documentclass[10pt]{report}
+
+% If you need more packages, then include them yourself
+\usepackage{graphicx}
+\usepackage{setspace}
+
+% These are the margins located on the Binghamton gradschool website
+\setlength{\oddsidemargin}{0.5in}
+\setlength{\headsep}{0pt}
+\setlength{\topmargin}{0.0in}
+\setlength{\textheight}{9in}
+\setlength{\textwidth}{6.0in}
+
+% two helpful commands. 
+% "newheading" is used in the first few sections before the chapters
+% "newchapter" is to simply chapter beginnings
+% some sample .tex files are included to demonstrate
+\newcommand{\newheading}[1]
+{ \begin{center} {\large \bf #1} \end{center} \vspace{0.5in} }
+\newcommand{\newchapter}[2] { \newpage \chapter{#1} \label{chap:#2} \input{#2} }
+
+\begin{document}
+\singlespacing
+% start with roman numbers, and then the first chapter
+% starts at page one after that.
+\pagenumbering{roman} 
+% Fill this page with your department's information (template from gradschool)
+\include{titlepage}
+% Fill this page with the name of your committee members 
+\include{approvalsheet}
+\include{abstract}
+% Who paid you, basically
+\include{acknowledgement}
+% Who you're grateful for =)
+\include{dedication}
+\tableofcontents
+\listoffigures
+\listoftables
+\newpage
+
+\pagenumbering{arabic}
+
+% Final copy should have primary text double spaced.
+% But don't send it to your committee that way...
+% It's a pain in the ass to print out.
+%\doublespacing
+
+%format: {Chapter Title}{latex file for that chapter}
+\newchapter{Introduction}{introduction}
+% this chapter has sample text for the bibliography
+% just delete it and replace with your own
+\newchapter{Good Stuff}{chapter1}
+%\newchapter{More Good Stuff}{chapter2}
+%\newchapter{Even More Good Stuff}{chapter3}
+%\newchapter{Conclusions and Future Work}{conclusions}
+
+\singlespacing
+\appendix
+\newpage
+
+% fill in your own list of references
+\bibliographystyle{acm}
+\bibliography{refs}
+\end{document}
